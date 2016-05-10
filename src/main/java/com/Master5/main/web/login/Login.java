@@ -289,19 +289,7 @@ public class Login {
 		conditonMap.put("center", "113.727566,34.770802");
 		resList.add(conditonMap);
 
-		// tempList=new ArrayList<String>();
-		// conditonMap=new HashMap<String,Object>();
-		// tempList.add("113.646268,34.755067");
-		// tempList.add("113.645989,34.755058");
-		// tempList.add("113.645834,34.75493");
-		// tempList.add("113.645635,34.754864");
-		// tempList.add("113.645501,34.754736");
-		// tempList.add("113.645501,34.754512");
-		// tempList.add("113.646113,34.754503");
-		// tempList.add("113.646258,34.755049");
-		// conditonMap.put("LngLat", tempList);
-		// conditonMap.put("center", "113.64578,34.754776");
-		// resList.add(conditonMap);
+		
 		return resList;
 	}
 	

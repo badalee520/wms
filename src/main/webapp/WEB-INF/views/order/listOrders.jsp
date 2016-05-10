@@ -94,8 +94,8 @@ $(document).ready(function(){
 				<tr>
 				<th>#</th>
 				<th>状态</th>
-	            <th>供应商</th>
-	            <th>商品信息</th>
+	            <th>供货商</th>
+	            <th>食材信息</th>
 <!-- 	            <th>创建时间</th>
 	            <th>购买信息</th>
 	            <th>收货信息</th> -->
@@ -188,12 +188,12 @@ $(document).ready(function(){
 					<div class="modal-body" >
 						<!-- 弹框内容  -->
 						<div class="form-group">
-						   <label for="supplierID">供应商</label>
+						   <label for="supplierID">供货商</label>
 							<select class="form-control" name="supplierID.id"  id="supplierID" >
 							</select>
 						</div>
 						<div class="form-group">
-						   <label for="ingredient">商品</label>
+						   <label for="ingredient">食材</label>
 						   <div class="table-responsive">
 						   		<table class="table table-hover info table-condensed" id="ingredient" >
 						   		</table>
