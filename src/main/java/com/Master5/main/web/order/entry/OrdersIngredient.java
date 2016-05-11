@@ -1,4 +1,4 @@
-package com.Master5.main.web.order.entity;
+package com.Master5.main.web.order.entry;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,9 +17,9 @@ public class OrdersIngredient {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
-	@ManyToOne
-	@JoinColumn(name = "orders_id")
-	private Orders ordersId;
+//	@ManyToOne
+//	@JoinColumn(name = "orders_id")
+//	private Orders ordersId;
 
 	@ManyToOne
 	@JoinColumn(name = "ingredient_id")
@@ -35,17 +35,14 @@ public class OrdersIngredient {
 		this.id = id;
 	}
 
-	public Orders getOrderId() {
-		return ordersId;
-	}
 
-	public Orders getOrdersId() {
-		return ordersId;
-	}
-
-	public void setOrdersId(Orders ordersId) {
-		this.ordersId = ordersId;
-	}
+//	public Orders getOrdersId() {
+//		return ordersId;
+//	}
+//
+//	public void setOrdersId(Orders ordersId) {
+//		this.ordersId = ordersId;
+//	}
 
 	public Ingredient getIngredientId() {
 		return ingredientId;

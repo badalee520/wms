@@ -10,27 +10,32 @@ import org.springframework.stereotype.Service;
 import com.Master5.main.web.order.dao.IngredientDao;
 import com.Master5.main.web.order.dao.IngredientTypeDao;
 import com.Master5.main.web.order.dao.OrderDao;
+import com.Master5.main.web.order.dao.OrdersIngredientDao;
 import com.Master5.main.web.order.dao.SupplierDao;
-import com.Master5.main.web.order.entity.Ingredient;
-import com.Master5.main.web.order.entity.IngredientType;
-import com.Master5.main.web.order.entity.Orders;
-import com.Master5.main.web.order.entity.Supplier;
+import com.Master5.main.web.order.entry.Ingredient;
+import com.Master5.main.web.order.entry.IngredientType;
+import com.Master5.main.web.order.entry.Orders;
+import com.Master5.main.web.order.entry.OrdersIngredient;
+import com.Master5.main.web.order.entry.Supplier;
 import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 
 @Service
-public class OrderService   {
+public class OrderService {
 
 	@Autowired
 	OrderDao orderDao;
-	
+
 	@Autowired
 	SupplierDao supplierDao;
-	
+
 	@Autowired
 	IngredientDao ingredientDao;
 
 	@Autowired
 	IngredientTypeDao ingredientTypeDao;
+
+	@Autowired
+	OrdersIngredientDao ordersIngredientDao;
 
 	public List<IngredientType> queryIngredientType() {
 		return ingredientTypeDao.findAll();
@@ -40,15 +45,15 @@ public class OrderService   {
 		return ingredientTypeDao.saveAndFlush(bean);
 	}
 
-	public boolean deleteIngredientType(int id) throws ConstraintViolationException{
+	public boolean deleteIngredientType(int id) throws ConstraintViolationException {
 		ingredientTypeDao.delete(id);
 		return true;
 	}
-	
-	public List<Supplier> querySupplier(){
+
+	public List<Supplier> querySupplier() {
 		return supplierDao.findAll();
 	}
-	
+
 	public Supplier addSupplier(Supplier bean) {
 		return supplierDao.saveAndFlush(bean);
 	}
@@ -57,11 +62,11 @@ public class OrderService   {
 		supplierDao.delete(id);
 		return true;
 	}
-	
-	public List<Ingredient> queryIngredient(){
+
+	public List<Ingredient> queryIngredient() {
 		return ingredientDao.findAll();
 	}
-	
+
 	public Ingredient addIngredient(Ingredient bean) {
 		bean.setChangeTime(Calendar.getInstance().getTime());
 		return ingredientDao.saveAndFlush(bean);
@@ -71,12 +76,11 @@ public class OrderService   {
 		ingredientDao.delete(id);
 		return true;
 	}
-	
-	
-	public List<Orders> queryOrders(){
+
+	public List<Orders> queryOrders() {
 		return orderDao.findAll();
 	}
-	
+
 	public Orders saveOrders(Orders bean) {
 		return orderDao.saveAndFlush(bean);
 	}
@@ -93,5 +97,13 @@ public class OrderService   {
 	public Orders queryOrders(int id) {
 		return orderDao.findOne(id);
 	}
-	
+
+	public List<OrdersIngredient> queryRecord() {
+		return ordersIngredientDao.findAll();
+	}
+
+	public OrdersIngredient addRecord(OrdersIngredient bean) {
+		return ordersIngredientDao.saveAndFlush(bean);
+	}
+
 }

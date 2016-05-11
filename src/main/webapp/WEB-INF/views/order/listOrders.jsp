@@ -113,7 +113,7 @@ $(document).ready(function(){
 						<div>时间：${list.createtime}</div>
 			            <c:if test="${list.status gt 0}">
 							<div><span class="label label-info">${list.buyyer.name}采购完成</span></div>
-							<div>时间：${list.buttime}</div>
+							<div>时间：${list.buytime}</div>
 			            </c:if>
 			            <c:if test="${list.status gt 1}">
 							<div><span class="label label-info">${list.manager.name}收货完成</span></div>
@@ -141,7 +141,7 @@ $(document).ready(function(){
 		<%-- 				<td>${list.createtime}</td>
 						<td>
 							<div><span class="label label-info">${list.buyyer.name}</span></div>
-							<div><span class="label label-default">${list.buttime}</span></div>
+							<div><span class="label label-default">${list.buytime}</span></div>
 						</td>
 						<td>
 							<div><span class="label label-info">${list.manager.name}</span></div>

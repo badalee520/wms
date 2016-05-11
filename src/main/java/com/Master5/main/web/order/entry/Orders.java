@@ -1,4 +1,4 @@
-package com.Master5.main.web.order.entity;
+package com.Master5.main.web.order.entry;
 
 import java.util.Date;
 import java.util.List;
@@ -43,7 +43,7 @@ public class Orders {
 	@ManyToOne
 	private User buyyer;
 
-	private Date buttime;
+	private Date buytime;
 
 	@ManyToOne
 	private User manager;
@@ -110,12 +110,12 @@ public class Orders {
 		this.buyyer = buyyer;
 	}
 
-	public Date getButtime() {
-		return buttime;
+	public Date getBuytime() {
+		return buytime;
 	}
 
-	public void setButtime(Date buttime) {
-		this.buttime = buttime;
+	public void setBuytime(Date buytime) {
+		this.buytime = buytime;
 	}
 
 	public User getManager() {
@@ -137,7 +137,7 @@ public class Orders {
 	@Override
 	public String toString() {
 		return "Orders [id=" + id + ", supplierID=" + supplierID + ", status=" + status + ", remarks=" + remarks
-				+ ", createtime=" + createtime + ", buyyer=" + buyyer + ", buttime=" + buttime + ", manager=" + manager
+				+ ", createtime=" + createtime + ", buyyer=" + buyyer + ", buytime=" + buytime + ", manager=" + manager
 				+ ", intime=" + intime + ", detail=" + detail + "]";
 	}
 

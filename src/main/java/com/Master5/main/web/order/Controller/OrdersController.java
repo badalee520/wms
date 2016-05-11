@@ -21,11 +21,11 @@ import com.Master5.main.utils.constant.Key;
 import com.Master5.main.utils.constant.MsgKey;
 import com.Master5.main.utils.constant.OrdersStatus;
 import com.Master5.main.utils.constant.SysKey;
-import com.Master5.main.web.order.entity.Ingredient;
-import com.Master5.main.web.order.entity.IngredientType;
-import com.Master5.main.web.order.entity.Orders;
-import com.Master5.main.web.order.entity.OrdersIngredient;
-import com.Master5.main.web.order.entity.Supplier;
+import com.Master5.main.web.order.entry.Ingredient;
+import com.Master5.main.web.order.entry.IngredientType;
+import com.Master5.main.web.order.entry.Orders;
+import com.Master5.main.web.order.entry.OrdersIngredient;
+import com.Master5.main.web.order.entry.Supplier;
 import com.Master5.main.web.order.service.OrderService;
 import com.Master5.main.web.user.entry.User;
 
@@ -52,11 +52,9 @@ public class OrdersController {
 	@CheckPermission(name = "添加订单", method = "order:addOrders")
 	@RequestMapping(value = "addOrders", method = RequestMethod.POST)
 	public String addOrders(Orders bean, int[] ingredientId, int[] amount, RedirectAttributes redirectAttributes) {
-
 		List<OrdersIngredient> detail = new ArrayList<>();
 
 		for (int i = 0; i < amount.length; i++) {
-
 			if (amount[i] == 0) {
 				continue;
 			}
@@ -72,7 +70,7 @@ public class OrdersController {
 		bean.setDetail(detail);
 		// bean.setBuyyer((User)
 		// SecurityUtils.getSubject().getSession().getAttribute(Key.LOGINED));
-		// bean.setButtime(Calendar.getInstance().getTime());
+		// bean.setBuytime(Calendar.getInstance().getTime());
 		bean.setCreatetime(Calendar.getInstance().getTime());
 
 		orderService.saveOrders(bean);
@@ -89,7 +87,7 @@ public class OrdersController {
 		}
 		orders.setStatus(OrdersStatus.BUY);
 		orders.setBuyyer((User) SecurityUtils.getSubject().getSession().getAttribute(Key.LOGINED));
-		orders.setButtime(Calendar.getInstance().getTime());
+		orders.setBuytime(Calendar.getInstance().getTime());
 		orderService.saveOrders(orders);
 		return "redirect:../listOrders";
 	}
@@ -106,6 +104,8 @@ public class OrdersController {
 		orders.setManager((User) SecurityUtils.getSubject().getSession().getAttribute(Key.LOGINED));
 		orders.setIntime(Calendar.getInstance().getTime());
 		orderService.saveOrders(orders);
+		
+		
 		return "redirect:../listOrders";
 	}
 
@@ -122,6 +122,17 @@ public class OrdersController {
 		}
 		return "redirect:../listOrders";
 	}
+	
+//	@ResponseBody
+//	@RequestMapping(value="stock")
+//	public List<Object> listStock(){
+//		List<OrdersIngredient> list=orderService.queryRecord();
+//		list.
+//		
+//		return list;
+//	}
+	
+	//select 商品名，sum(记录) from 表  where 商品id=商品id  group by 商品id
 
 	@ResponseBody
 	@RequestMapping(value = "listIngredientTypeJson", method = RequestMethod.POST)

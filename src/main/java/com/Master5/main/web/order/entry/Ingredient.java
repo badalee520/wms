@@ -1,4 +1,4 @@
-package com.Master5.main.web.order.entity;
+package com.Master5.main.web.order.entry;
 
 import java.util.Date;
 
