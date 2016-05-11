@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Master5.main.web.record.dao.RecordDao;
-import com.Master5.main.web.record.entry.Record;
+import com.Master5.main.web.record.entity.Record;
 
 @Service
 public class RecordService {

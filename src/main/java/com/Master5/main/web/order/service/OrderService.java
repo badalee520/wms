@@ -11,10 +11,10 @@ import com.Master5.main.web.order.dao.IngredientDao;
 import com.Master5.main.web.order.dao.IngredientTypeDao;
 import com.Master5.main.web.order.dao.OrderDao;
 import com.Master5.main.web.order.dao.SupplierDao;
-import com.Master5.main.web.order.entry.Ingredient;
-import com.Master5.main.web.order.entry.IngredientType;
-import com.Master5.main.web.order.entry.Orders;
-import com.Master5.main.web.order.entry.Supplier;
+import com.Master5.main.web.order.entity.Ingredient;
+import com.Master5.main.web.order.entity.IngredientType;
+import com.Master5.main.web.order.entity.Orders;
+import com.Master5.main.web.order.entity.Supplier;
 import com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException;
 
 @Service

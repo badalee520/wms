@@ -1,4 +1,4 @@
-package com.Master5.main.web.order.entry;
+package com.Master5.main.web.order.entity;
 
 import java.util.Date;
 import java.util.List;
@@ -10,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -52,12 +50,7 @@ public class Orders {
 
 	private Date intime;
 
-//	@ManyToMany
-//	@JoinTable(name = "orders_ingredient", joinColumns = { @JoinColumn(name = "orders_id") }, inverseJoinColumns = {
-//			@JoinColumn(name = "ingredient_id") })
-//	private List<Ingredient> ingredients;
-
-	@OneToMany(fetch=FetchType.EAGER,cascade={CascadeType.ALL})
+	@OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
 	@JoinColumn(name = "orders_id")
 	private List<OrdersIngredient> detail;
 
@@ -141,19 +134,11 @@ public class Orders {
 		this.intime = intime;
 	}
 
-//	public List<Ingredient> getIngredients() {
-//		return ingredients;
-//	}
-//
-//	public void setIngredients(List<Ingredient> ingredients) {
-//		this.ingredients = ingredients;
-//	}
-
 	@Override
 	public String toString() {
 		return "Orders [id=" + id + ", supplierID=" + supplierID + ", status=" + status + ", remarks=" + remarks
 				+ ", createtime=" + createtime + ", buyyer=" + buyyer + ", buttime=" + buttime + ", manager=" + manager
-				+ ", intime=" + intime   + ", detail=" + detail + "]";
+				+ ", intime=" + intime + ", detail=" + detail + "]";
 	}
 
 }

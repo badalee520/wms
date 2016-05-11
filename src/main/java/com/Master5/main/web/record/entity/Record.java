@@ -1,4 +1,4 @@
-package com.Master5.main.web.record.entry;
+package com.Master5.main.web.record.entity;
 
 import java.util.Date;
 

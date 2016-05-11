@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.Master5.main.annotation.CheckPermission;
 import com.Master5.main.utils.IPTools;
 import com.Master5.main.utils.constant.Key;
-import com.Master5.main.web.record.entry.Record;
+import com.Master5.main.web.record.entity.Record;
 import com.Master5.main.web.record.service.RecordService;
 
 public class Interceptor implements HandlerInterceptor {

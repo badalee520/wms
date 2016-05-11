@@ -21,11 +21,11 @@ import com.Master5.main.utils.constant.Key;
 import com.Master5.main.utils.constant.MsgKey;
 import com.Master5.main.utils.constant.OrdersStatus;
 import com.Master5.main.utils.constant.SysKey;
-import com.Master5.main.web.order.entry.Ingredient;
-import com.Master5.main.web.order.entry.IngredientType;
-import com.Master5.main.web.order.entry.Orders;
-import com.Master5.main.web.order.entry.OrdersIngredient;
-import com.Master5.main.web.order.entry.Supplier;
+import com.Master5.main.web.order.entity.Ingredient;
+import com.Master5.main.web.order.entity.IngredientType;
+import com.Master5.main.web.order.entity.Orders;
+import com.Master5.main.web.order.entity.OrdersIngredient;
+import com.Master5.main.web.order.entity.Supplier;
 import com.Master5.main.web.order.service.OrderService;
 import com.Master5.main.web.user.entry.User;
 
